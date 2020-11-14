@@ -1,0 +1,112 @@
+; This file is part of Sokoban Within.
+;
+; Sokoban Within is free software: you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation, either version 3 of the License, or
+; (at your option) any later version.
+;
+; Sokoban Within is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with Sokoban Within.  If not, see <https://www.gnu.org/licenses/>.	
+
+		macro STRING_GENERATION name, content
+
+	CHARSET '0', '9', 0
+	CHARSET 'abcdefghijklmnopqrstuvwxyz', 10
+	CHARSET 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 10
+	CHARSET ':', 36 ; TODO drw it
+	CHARSET '.', 37
+	CHARSET ',', 38
+	CHARSET '\'', 39
+	CHARSET '!', 40
+	CHARSET ' ', 41
+STRING_{name}
+.start
+	defb {content}
+.stop
+.size equ .stop-.start
+
+	CHARSET
+	endm
+	
+	
+	macro WORD_GENERATION name
+		STRING_GENERATION {name}, "{name}"
+	endm
+
+
+
+
+ WORD_GENERATION PLAY
+ WORD_GENERATION CREDITS
+ WORD_GENERATION HELP
+
+
+ WORD_GENERATION LEVEL
+ WORD_GENERATION CODE
+ WORD_GENERATION TIME
+ WORD_GENERATION PUSHES
+ WORD_GENERATION MOVES
+
+ STRING_GENERATION HELP_IN_GAME, "IN GAME"
+
+ STRING_GENERATION HELP_CURSORS, "CURSORS: MOVE"
+ STRING_GENERATION HELP_PAUSE, "P: PAUSE"
+ STRING_GENERATION HELP_RESTART, "R: RESTART"
+ STRING_GENERATION HELP_SOUND, "M: SOUND EFFECT"
+
+ STRING_GENERATION HELP_IN_MENU, "IN MENU"
+
+ STRING_GENERATION HELP_ESC, "ESC: QUIT GAME"
+ STRING_GENERATION HELP_SPACE, "SPACE: CONTINUE"
+
+
+STRING_GENERATION SOKOBANIA1, "SOKOBAN"
+STRING_GENERATION SOKOBANIA2, "WITHIN"
+
+
+STRING_GENERATION CREDITS_CODE1, "CODE"
+STRING_GENERATION CREDITS_CODE2, "R. GIOT"
+
+STRING_GENERATION CREDITS_VISUAL1, "VISUALS"
+STRING_GENERATION CREDITS_VISUAL2, "D. FRAGKOS"
+
+
+
+STRING_GENERATION CREDITS_AUDIO1, "AUDIO"
+STRING_GENERATION CREDITS_AUDIO2, "G. RIMAURO"
+
+STRING_GENERATION CREDITS_LEVELS1, "LEVELS"
+STRING_GENERATION CREDITS_LEVELS2, "A. du Peloux"
+STRING_GENERATION CREDITS_LEVELS3, "H. Nakamiya"
+
+;                            XXXXXXXXXXXXXXXX
+STRING_GENERATION WRITTER1, "o rescue the"
+STRING_GENERATION WRITTER2, "princess,"
+STRING_GENERATION WRITTER3, "you must escape"
+STRING_GENERATION WRITTER4, "from several"
+ 
+STRING_GENERATION WRITTER5, "mazes in"
+STRING_GENERATION WRITTER6, "Narseh'"
+STRING_GENERATION WRITTER6b, "s dungeon."
+STRING_GENERATION WRITTER7, "good luck,"
+STRING_GENERATION WRITTER8, " prince dastan "
+
+
+
+
+STRING_GENERATION EOG1, "he power of"
+STRING_GENERATION EOG2, "evil Narseh"
+STRING_GENERATION EOG3, "shattered! The"
+STRING_GENERATION EOG4, "Persian people"
+STRING_GENERATION EOG5, "hail their"
+STRING_GENERATION EOG6, "Princess... and"
+STRING_GENERATION EOG7, "the brave youth,"
+STRING_GENERATION EOG8, "now known as..."
+
+
+STRING_GENERATION END, "THE END!"

@@ -1,0 +1,9 @@
+Code: Romain Giot
+Visuals: Dimitris Fragkos
+Audio: Gilles Rimauro
+
+Levels designed by (available at http://www.sourcecode.se/sokoban/levels)
+- Aymeric du Peloux
+- Hirohiko Nakamiya
+
+- Apultra cruncher/uncruncher, festival, PlayTZX, rasm, 2cdt, Arkos Tracker belong to their respective owner
